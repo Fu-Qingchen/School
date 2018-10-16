@@ -1,0 +1,103 @@
+C51 COMPILER V9.59.0.0   L5_2_LED                                                          10/16/2018 22:25:02 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE L5_2_LED
+OBJECT MODULE PLACED IN .\Objects\L5.2_LED.obj
+COMPILER INVOKED BY: E:\Keil_v5\C51\BIN\C51.EXE L5.2_LED.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -L5.2_LED.lst) TABS(2) OBJECT(.\Objects\L5.2_LED.obj)
+
+line level    source
+
+   1          /**************************************************************************
+   2            * @brief           : C51 16个LED顺次点亮
+   3            * @author        : fuqingchen@whut.edu.cn
+   4            * @data          : 2018-10-16
+   5          ***************************************************************************/
+   6          
+   7          #include <reg51.h>
+   8          #define uchar unsigned char //刚好8位
+   9          #define uint unsigned int
+  10          
+  11          void delay(uint i){ //抄的课本上的
+  12   1        uchar t;
+  13   1        while(i--){
+  14   2          for(t = 0;t<120;t++);
+  15   2        }
+  16   1      }
+  17          
+  18          /*
+  19          控制开灯
+  20          输入：i 循环次数；P 各个接口的状态
+  21          返回循环次数
+  22          */
+  23          uint light(uint i,uchar *P){
+  24   1        if(i <= 8){
+  25   2          *(P) = *(P) << 1;
+  26   2          i++;
+  27   2        }else if(i == 9){
+  28   2          *(P) = 0x00;
+  29   2          *(P+1) = 0x01; //第一个灯点亮
+  30   2          i++;
+  31   2        }else if(i <= 16){
+  32   2          *(P+1) = *(P+1) << 1;
+  33   2          i++;
+  34   2        }else{ //恢复初始
+  35   2          *(P) = 0x01; //我不知道怎么一次给一个数组全赋值，然后就分开写了
+  36   2          *(P+1) = 0x00;
+  37   2          i = 1;
+  38   2        }
+  39   1        return i;
+  40   1      }
+  41          
+  42          void main(){
+  43   1        uchar temp[2] = {0x01,0x00};
+  44   1        uint j = 1;
+  45   1        delay(100);
+  46   1        P0 = ~temp[0]; //第一个灯点亮
+  47   1        P1 = ~temp[1];
+  48   1        while(1){
+  49   2          delay(100);
+  50   2          j = light(j,temp);
+  51   2          P0 = ~temp[0];
+  52   2          P1 = ~temp[1];
+  53   2        }
+  54   1      }
+C51 COMPILER V9.59.0.0   L5_2_LED                                                          10/16/2018 22:25:02 PAGE 2   
+
+  55          /**
+  56          *
+  57          * ━━━━━━神兽出没━━━━━━
+  58          * 　　 ┏┓     ┏┓
+  59          * 　　┏┛┻━━━━━┛┻┓
+  60          * 　　┃　　　　　 ┃
+  61          * 　　┃　　━　　　┃
+  62          * 　　┃　┳┛　┗┳  ┃
+  63          * 　　┃　　　　　 ┃
+  64          * 　　┃　　┻　　　┃
+  65          * 　　┃　　　　　 ┃
+  66          * 　　┗━┓　　　┏━┛　Code is far away from bug with the animal protecting
+  67          * 　　　 ┃　　　┃    神兽保佑,代码无bug
+  68          * 　　　　┃　　　┃
+  69          * 　　　　┃　　　┗━━━┓
+  70          * 　　　　┃　　　　　　┣┓
+  71          * 　　　　┃　　　　　　┏┛
+  72          * 　　　　┗┓┓┏━┳┓┏┛
+  73          * 　　　　 ┃┫┫ ┃┫┫
+  74          * 　　　　 ┗┻┛ ┗┻┛
+  75          *
+  76          * ━━━━━━感觉萌萌哒━━━━━━
+  77          */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    229    ----
+   CONSTANT SIZE    =      2    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
