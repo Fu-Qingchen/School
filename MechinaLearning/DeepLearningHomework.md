@@ -215,7 +215,7 @@ z^{(3)}=\left[
 z_0^{(3)} \\
 z_1^{(3)} \\
 \end{matrix}
-\right]=w^{(2)}a^{(1)}=\left[
+\right]=w^{(3)}a^{(2)}=\left[
 \begin{matrix}
 w_{00}^{(3)} & w_{01}^{(3)} & w_{02}^{(3)} & w_{03}^{(3)} & w_{04}^{(3)}\\
 w_{10}^{(3)} & w_{11}^{(3)} & w_{12}^{(3)} & w_{13}^{(3)} & w_{04}^{(3)}\\
@@ -255,7 +255,7 @@ a^{(3)}=\left[
 a_0^{(3)} \\
 a_1^{(3)} \\
 \end{matrix}
-\right]=\sigma\left(z^{(2)}\right)=\sigma\left(\left[
+\right]=\sigma\left(z^{(3)}\right)=\sigma\left(\left[
 \begin{matrix}
 0.7947\\
 0.6224\\
@@ -271,8 +271,113 @@ $$
 ### 损失
 
 $$
-C=\sum\limits_i\frac12(y_i-a_i)^2\\=\frac 12(0.6328-0.10)^2+\frac 12(0.6674-0.24)^2=0.2332
+C^{(3)}=\sum\limits_i\frac12(y_i^{(3)}-a_i^{(3)})^2\\=\frac 12(0.6328-0.10)^2+\frac 12(0.6674-0.24)^2=0.2332
 $$
 
 ## 反向传播
 
+### 3层→2层
+
+有以下数学关系：
+$$
+C^{(3)}=\frac12(y^{(3)}-a^{(3)})^2\\
+a^{(3)}=\sigma(z^{(3)})\\
+z^{(3)}=w^{(3)}a^{(2)}
+$$
+因此 权重梯度$\bigtriangledown W$ 
+$$
+\bigtriangledown w_{ij}^{(3)}=\frac{\partial C^{(3)}}{\partial w_{ij}^{(3)}}=\frac{\partial C^{(3)}}{\partial a_i^{(3)}}\frac{\partial a_i^{(3)}}{\partial z_i^{(3)}}\frac{\partial z_i^{(3)}}{\partial w_{ij}^{(3)}}=(a_i^{(3)}-y_i^{(3)})\sigma(z_i^{(3)})[1-\sigma(z_i^{(3)})]a_j^{(2)}\\
+\bigtriangledown w^{(3)}=\left[
+\begin{matrix}
+0.16 & 0.17 & 0.18 & 0.19 & 0.20\\
+0.21 & 0.22 & 0.23 & 0.24 & 0.25\\
+\end{matrix}
+\right]
+$$
+修正后权重：
+$$
+w^{(3)'}=w^{(3)}-\bigtriangledown w^{(3)}=\left[
+\begin{matrix}
+0.16 & 0.17 & 0.18 & 0.19 & 0.20\\
+0.21 & 0.22 & 0.23 & 0.24 & 0.25\\
+\end{matrix}
+\right]
+$$
+### 2层→1层
+
+有以下数学关系：
+$$
+C^{(3)}=\frac12(y^{(3)}-a^{(3)})^2\\
+a^{(3)}=\sigma(z^{(3)})\\
+z^{(3)}=w^{(3)}a^{(2)}\\
+a^{(2)}=\sigma(z^{(2)})\\
+z^{(2)}=w^{(2)}a^{(1)}\\
+$$
+因此 权重梯度$\bigtriangledown W$ 
+$$
+\bigtriangledown w_{ij}^{(2)}
+=\frac{\partial C^{(3)}}{\partial w_{ij}^{(2)}}
+=\frac{\partial C^{(3)}}{\partial a_i^{(2)}}\frac{\partial a_i^{(2)}}{\partial z_{i}^{(2)}}\frac{\partial z_i^{(2)}}{\partial w_{ij}^{(2)}}
+=\frac{\partial C^{(3)}}{\partial a_i^{(2)}}\sigma(z_i^{(2)})[1-\sigma(z_i^{(2)})]a_j^{(1)}\\
+\bigtriangledown w^{(3)}=\left[
+\begin{matrix}
+0.16 & 0.17 & 0.18 & 0.19 & 0.20\\
+0.21 & 0.22 & 0.23 & 0.24 & 0.25\\
+\end{matrix}
+\right]
+$$
+其中
+$$
+\frac{\partial C^{(3)}}{\partial a_i^{(2)}}
+=\sum\limits_i\frac{\partial C^{(3)}}{\partial a_i^{(3)}}\frac{\partial a_i^{(3)}}{\partial z_i^{(3)}}\frac{\partial z_i^{(3)}}{\partial a_{j}^{(2)}}
+=\sum\limits_i\frac{\partial C^{(3)}}{\partial a_i^{(3)}}a_i^{(3)}(1-a_i^{(3)})w_{ij}^{(3)}\\
+$$
+修正后权重：
+$$
+w^{(3)'}=w^{(3)}-\bigtriangledown w^{(3)}=\left[
+\begin{matrix}
+0.16 & 0.17 & 0.18 & 0.19 & 0.20\\
+0.21 & 0.22 & 0.23 & 0.24 & 0.25\\
+\end{matrix}
+\right]
+$$
+### 1层→0层
+
+有以下数学关系：
+$$
+C^{(3)}=\frac12(y^{(3)}-a^{(3)})^2\\
+a^{(3)}=\sigma(z^{(3)})\\
+z^{(3)}=w^{(3)}a^{(2)}\\
+a^{(2)}=\sigma(z^{(2)})\\
+z^{(2)}=w^{(2)}a^{(1)}\\
+a^{(1)}=\sigma(z^{(1)})\\
+z^{(1)}=w^{(1)}a^{(0)}\\
+$$
+因此 权重梯度$\bigtriangledown W$ 
+$$
+\bigtriangledown w_{ij}^{(1)}
+=\frac{\partial C^{(3)}}{\partial w_{ij}^{(1)}}
+=\frac{\partial C^{(3)}}{\partial a_i^{(1)}}\frac{\partial a_i^{(1)}}{\partial z_{i}^{(1)}}\frac{\partial z_i^{(2)}}{\partial w_{ij}^{(1)}}
+=\frac{\partial C^{(3)}}{\partial a_i^{(1)}}\sigma(z_i^{(1)})[1-\sigma(z_i^{(1)})]a_j^{(0)}\\
+\bigtriangledown w^{(3)}=\left[
+\begin{matrix}
+0.16 & 0.17 & 0.18 & 0.19 & 0.20\\
+0.21 & 0.22 & 0.23 & 0.24 & 0.25\\
+\end{matrix}
+\right]
+$$
+其中
+$$
+\frac{\partial C^{(3)}}{\partial a_i^{(1)}}
+=\sum\limits_i\frac{\partial C^{(3)}}{\partial a_i^{(2)}}\frac{\partial a_i^{(2)}}{\partial z_i^{(3)}}\frac{\partial z_i^{(2)}}{\partial a_{j}^{(2)}}
+=\sum\limits_i\frac{\partial C^{(3)}}{\partial a_i^{(2)}}a_i^{(2)}(1-a_i^{(2)})w_{ij}^{(2)}\\
+$$
+修正后权重：
+$$
+w^{(3)'}=w^{(3)}-\bigtriangledown w^{(3)}=\left[
+\begin{matrix}
+0.16 & 0.17 & 0.18 & 0.19 & 0.20\\
+0.21 & 0.22 & 0.23 & 0.24 & 0.25\\
+\end{matrix}
+\right]
+$$
