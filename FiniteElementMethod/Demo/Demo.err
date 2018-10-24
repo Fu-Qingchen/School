@@ -1,2 +1,173 @@
 /COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       13:21:17
 /COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       18:27:19
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       09:53:43
+
+ *** ERROR ***                           CP =      10.609   TIME= 10:14:46
+ An unexpected error ( SIG$BREAK ) has occurred...  ANSYS internal data  
+ has been corrupted.  ANSYS is unable to recover and will terminate.     
+ Previously saved files are unaffected.  Please send the data leading    
+ to this operation to your technical support provider, as this will      
+ allow ANSYS, Inc to improve the program.                                
+
+ *** ERROR ***                           CP =      10.641   TIME= 10:14:46
+ An unexpected error ( SIG$ABORT ) has occurred...  ANSYS internal data  
+ has been corrupted.  ANSYS is unable to recover and will terminate.     
+ Previously saved files are unaffected.  Please send the data leading    
+ to this operation to your technical support provider, as this will      
+ allow ANSYS, Inc to improve the program.                                
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:15:45
+
+ *** ERROR ***                           CP =       0.047   TIME= 10:15:52
+ An unexpected error ( SIG$BREAK ) has occurred...  ANSYS internal data  
+ has been corrupted.  ANSYS is unable to recover and will terminate.     
+ Previously saved files are unaffected.  Please send the data leading    
+ to this operation to your technical support provider, as this will      
+ allow ANSYS, Inc to improve the program.                                
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:16:12
+
+ *** ERROR ***                           CP =      13.641   TIME= 10:26:12
+ This function requires defined lines.                                   
+  No lines are currently defined.                                        
+
+ *** ERROR ***                           CP =      13.922   TIME= 10:26:27
+ This function requires defined lines.                                   
+  No lines are currently defined.                                        
+
+ *** ERROR ***                           CP =      14.047   TIME= 10:26:34
+ This function requires defined lines.                                   
+  No lines are currently defined.                                        
+
+ *** ERROR ***                           CP =      23.812   TIME= 10:31:06
+ Area list to be operated on is empty.                                   
+
+ *** ERROR ***                           CP =      24.406   TIME= 10:31:42
+ Area list to be subtracted is empty.                                    
+
+ *** WARNING ***                         CP =      24.906   TIME= 10:32:11
+ Some of the requested areas to be subtracted were also included in the  
+ selected set to be operated on.  These areas have been removed from     
+ the area to be operated on list.                                        
+
+ *** ERROR ***                           CP =      25.031   TIME= 10:32:12
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+
+ *** WARNING ***                         CP =      25.625   TIME= 10:32:45
+ Some of the requested areas to be operated on were also included in the 
+ selected set to be subtracted.  These areas have been removed from the  
+ area to be subtracted list.                                             
+
+ *** ERROR ***                           CP =      25.688   TIME= 10:32:45
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+
+ *** ERROR ***                           CP =      26.922   TIME= 10:34:03
+ Area list to be subtracted is empty.                                    
+
+ *** WARNING ***                         CP =      27.578   TIME= 10:34:27
+ Some of the requested areas to be operated on were also included in the 
+ selected set to be subtracted.  These areas have been removed from the  
+ area to be subtracted list.                                             
+
+ *** ERROR ***                           CP =      31.141   TIME= 10:35:52
+ This function requires defined volumes.                                 
+  No volumes are currently defined.                                      
+
+ *** ERROR ***                           CP =      31.641   TIME= 10:36:05
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+
+ *** ERROR ***                           CP =      32.172   TIME= 10:36:22
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+
+ *** ERROR ***                           CP =      32.562   TIME= 10:36:58
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+
+ *** ERROR ***                           CP =      33.094   TIME= 10:37:10
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:39:41
+
+ *** ERROR ***                           CP =       8.344   TIME= 10:52:17
+ Area list to be subtracted is empty.                                    
+
+ *** ERROR ***                           CP =       9.047   TIME= 10:52:40
+ Area list to be subtracted is empty.                                    
+
+ *** ERROR ***                           CP =       9.719   TIME= 10:53:00
+ Area list to be subtracted is empty.                                    
+
+ *** ERROR ***                           CP =      10.016   TIME= 10:53:16
+ Area list to be subtracted is empty.                                    
+
+ *** ERROR ***                           CP =      10.734   TIME= 10:53:48
+ Area list to be subtracted is empty.                                    
+
+ *** ERROR ***                           CP =      11.531   TIME= 10:54:32
+ Area list to be subtracted is empty.                                    
+
+ *** WARNING ***                         CP =      12.062   TIME= 10:55:11
+ Some of the requested areas to be operated on were also included in the 
+ selected set to be subtracted.  These areas have been removed from the  
+ area to be subtracted list.                                             
+
+ *** ERROR ***                           CP =      12.109   TIME= 10:55:11
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+
+ *** WARNING ***                         CP =      12.766   TIME= 10:55:38
+ Some of the requested areas to be operated on were also included in the 
+ selected set to be subtracted.  These areas have been removed from the  
+ area to be subtracted list.                                             
+
+ *** ERROR ***                           CP =      12.859   TIME= 10:55:38
+ Boolean operation failed.  Try adjusting the tolerance value on the     
+ BTOL command to some fraction of the minimum keypoint distance.Model    
+ Size (current problem) 5.656854e+001, current BTOL setting              
+ 1.000000e-005, minimum KPT distance 5.656854e+000.                      
+
+ *** ERROR ***                           CP =      13.719   TIME= 10:56:33
+ Area list to be subtracted is empty.                                    
+
+ *** ERROR ***                           CP =      14.547   TIME= 10:57:50
+ Area list to be subtracted is empty.                                    
+
+ *** ERROR ***                           CP =      15.641   TIME= 10:58:45
+ Area list to be operated on is empty.                                   
+
+ *** WARNING ***                         CP =      17.922   TIME= 11:00:50
+ Output entity is identical to the first input entity for ASBW command.  
+                                                                         
+ No new entities created.                                                
+
+ *** WARNING ***                         CP =      18.312   TIME= 11:01:02
+ Output entity is identical to the first input entity for ASBW command.  
+                                                                         
+ No new entities created.                                                
+
+ *** WARNING ***                         CP =      18.734   TIME= 11:01:21
+ Output entity is identical to the first input entity for ASBW command.  
+                                                                         
+ No new entities created.                                                
+
+ *** ERROR ***                           CP =      36.312   TIME= 11:11:54
+ An error occurred while attempting to open the results file Demo.rst.   
+
+ *** ERROR ***                           CP =      36.422   TIME= 11:11:56
+ No results file available.                                              

@@ -54,3 +54,386 @@ WPSTYLE,,,,,,,,0
 /REPLOT,RESIZE  
 FINISH  
 ! /EXIT,NOSAV   
+/BATCH  
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       09:53:49
+/input,menust,tmp,''
+/GRA,POWER
+/GST,ON
+/PLO,INFO,3
+/GRO,CURL,ON
+/CPLANE,1   
+/REPLOT,RESIZE  
+WPSTYLE,,,,,,,,0
+!*  
+/NOPR   
+KEYW,PR_SET,1   
+KEYW,PR_STRUC,1 
+KEYW,PR_THERM,0 
+KEYW,PR_FLUID,0 
+KEYW,PR_ELMAG,0 
+KEYW,MAGNOD,0   
+KEYW,MAGEDG,0   
+KEYW,MAGHFE,0   
+KEYW,MAGELC,0   
+KEYW,PR_MULTI,0 
+/GO 
+!*  
+/COM,   
+/COM,Preferences for GUI filtering have been set to display:
+/COM,  Structural   
+!*  
+/PREP7  
+!*  
+ET,1,MASS21 
+!*  
+/REPLOT,RESIZE  
+/BATCH  
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:16:13
+/input,menust,tmp,''
+/GRA,POWER
+/GST,ON
+/PLO,INFO,3
+/GRO,CURL,ON
+/CPLANE,1   
+/REPLOT,RESIZE  
+WPSTYLE,,,,,,,,0
+/PREP7  
+!*  
+ET,1,PLANE182   
+!*  
+!*  
+!*  
+!*  
+KEYOPT,1,1,0
+KEYOPT,1,3,0
+KEYOPT,1,6,0
+!*  
+!*  
+!*  
+/NOPR   
+KEYW,PR_SET,1   
+KEYW,PR_STRUC,1 
+KEYW,PR_THERM,0 
+KEYW,PR_FLUID,0 
+KEYW,PR_ELMAG,0 
+KEYW,MAGNOD,0   
+KEYW,MAGEDG,0   
+KEYW,MAGHFE,0   
+KEYW,MAGELC,0   
+KEYW,PR_MULTI,0 
+/GO 
+!*  
+/COM,   
+/COM,Preferences for GUI filtering have been set to display:
+/COM,  Structural   
+!*  
+!*  
+MPTEMP,,,,,,,,  
+MPTEMP,1,0  
+MPDATA,EX,1,,2.1e5  
+MPDATA,PRXY,1,,0
+BLC4,-20,-20,40,40  
+CYL4, , ,4  
+ASBA,       2,       2  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+ASBA,P51X,       1  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,       2,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,       1,P51X  
+WPSTYLE,,,,,,,,1
+WPSTYL, STAT
+wpro,,90.000000,
+wpro,,90.000000,
+ASBW,       3   
+ASBW,       3   
+ASBW,       3   
+ASBW,       3   
+wpro,,-90.000000,   
+wpro,,,90.000000
+wpro,,,90.000000
+wpro,,,90.000000
+wpro,,,90.000000
+ASBW,       3   
+wpro,,90.000000,
+wpro,,90.000000,
+wpro,,,90.000000
+wpro,90.000000,,
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+ASBW,P51X   
+APLOT   
+NPLOT   
+NPLOT   
+/REPLOT 
+RESUME  
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:39:23
+RESUME  
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:39:26
+RESUME  
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:39:27
+RESUME  
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:39:28
+FINISH  
+! /EXIT,NOSAV   
+/BATCH  
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       10:39:43
+/input,menust,tmp,''
+/GRA,POWER
+/GST,ON
+/PLO,INFO,3
+/GRO,CURL,ON
+/CPLANE,1   
+/REPLOT,RESIZE  
+WPSTYLE,,,,,,,,0
+!*  
+/NOPR   
+KEYW,PR_SET,1   
+KEYW,PR_STRUC,1 
+KEYW,PR_THERM,0 
+KEYW,PR_FLUID,0 
+KEYW,PR_ELMAG,0 
+KEYW,MAGNOD,0   
+KEYW,MAGEDG,0   
+KEYW,MAGHFE,0   
+KEYW,MAGELC,0   
+KEYW,PR_MULTI,0 
+/GO 
+!*  
+/COM,   
+/COM,Preferences for GUI filtering have been set to display:
+/COM,  Structural   
+!*  
+/PREP7  
+!*  
+ET,1,PLANE182   
+!*  
+!*  
+KEYOPT,1,1,0
+KEYOPT,1,3,0
+KEYOPT,1,6,0
+!*  
+BLC5,0,0,40,40  
+CYL4, , ,4  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,       2,P51X  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,       2,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+FLST,3,2,5,ORDE,2   
+FITEM,3,1   
+FITEM,3,-2  
+ASBA,P51X,P51X  
+ASBA,       1,       2  
+ASBA,       3,       3  
+wpro,,90.000000,
+ASBW,       3   
+wpro,90.000000,,
+wpro,90.000000,,
+wpro,90.000000,,
+wpro,90.000000,,
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+ASBW,P51X   
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+ASBW,P51X   
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+ASBW,P51X   
+wpro,,,90.000000
+FLST,2,2,5,ORDE,2   
+FITEM,2,1   
+FITEM,2,-2  
+ASBW,P51X   
+alist, all  
+WPSTYL, STAT
+! /CMAP,' ',' ',' ',CREATE,  0
+! /CMAP,' ',' ',' ',CREATE,  0  
+/PNUM,KP,0  
+/PNUM,LINE,0
+/PNUM,AREA,0
+/PNUM,VOLU,0
+/PNUM,NODE,0
+/PNUM,TABN,0
+/PNUM,SVAL,0
+/PNUM,DOMA,0
+/NUMBER,0   
+!*  
+/PNUM,ELEM,0
+/REPLOT 
+!*  
+/PNUM,KP,0  
+/PNUM,LINE,0
+/PNUM,AREA,1
+/PNUM,VOLU,0
+/PNUM,NODE,0
+/PNUM,TABN,0
+/PNUM,SVAL,0
+/PNUM,DOMA,0
+/NUMBER,0   
+!*  
+/PNUM,ELEM,0
+/REPLOT 
+!*  
+/PNUM,KP,0  
+/PNUM,LINE,0
+/PNUM,AREA,1
+/PNUM,VOLU,0
+/PNUM,NODE,0
+/PNUM,TABN,0
+/PNUM,SVAL,0
+/PNUM,DOMA,0
+/NUMBER,0   
+!*  
+/PNUM,ELEM,0
+/REPLOT 
+!*  
+FINISH  
+/POST1  
+FINISH  
+/POST26 
+FINISH  
+/POST1  
+FINISH  
+/SOL
+!*  
+/NOPR   
+KEYW,PR_SET,1   
+KEYW,PR_STRUC,1 
+KEYW,PR_THERM,0 
+KEYW,PR_FLUID,0 
+KEYW,PR_ELMAG,0 
+KEYW,MAGNOD,0   
+KEYW,MAGEDG,0   
+KEYW,MAGHFE,0   
+KEYW,MAGELC,0   
+KEYW,PR_MULTI,0 
+/GO 
+!*  
+/COM,   
+/COM,Preferences for GUI filtering have been set to display:
+/COM,  Structural   
+!*  
+FINISH  
+/PREP7  
+SMRT,6  
+FINISH  
+/POST1  
+FINISH  
+/AUX12  
+FINISH  
+/POST1  
+FINISH  
+/SOL
+FINISH  
+/POST1  
+SET,LIST
+!*  
+RSYS,0  
+AVPRIN,0
+AVRES,2,
+/EFACET,1   
+LAYER,0 
+FORCE,TOTAL 
+!*  
+FINISH  
+/PREP7  
+CM,_Y,AREA  
+ASEL, , , ,       4 
+CM,_Y1,AREA 
+CMSEL,S,_Y  
+!*  
+CMSEL,S,_Y1 
+AATT, , ,   1,       0, 
+CMSEL,S,_Y  
+CMDELE,_Y   
+CMDELE,_Y1  
+!*  
+FINISH  
+! /EXIT,ALL 
