@@ -171,3 +171,59 @@
 
  *** ERROR ***                           CP =      36.422   TIME= 11:11:56
  No results file available.                                              
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       14:54:15
+
+ *** WARNING ***                         CP =      28.641   TIME= 15:35:55
+ The mesh of area 3 contains PLANE182 triangles, which are much too      
+ stiff in bending.  Use quadratic (6- or 8-node) elements if possible.   
+
+ *** WARNING ***                         CP =      34.141   TIME= 15:36:41
+ Shape testing revealed that 3 of the 1545 new or modified elements      
+ violate shape warning limits.  To review test results, please see the   
+ output file or issue the CHECK command.                                 
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       15:45:31
+
+ *** WARNING ***                         CP =       6.016   TIME= 15:49:32
+ Elements of type PLANE182 already are implicit elements, so the         
+ ETCHG,ETI command ignores them.                                         
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       15:50:18
+
+ *** WARNING ***                         CP =      12.531   TIME= 16:01:45
+ The mesh of area 4 contains PLANE182 triangles, which are much too      
+ stiff in bending.  Use quadratic (6- or 8-node) elements if possible.   
+
+ *** ERROR ***                           CP =      35.016   TIME= 16:19:27
+ Element 1 requires material properties and references material number 1 
+ for which no properties are defined.  Checking terminates.              
+
+ *** ERROR ***                           CP =      35.266   TIME= 16:19:39
+ The step data was checked and there were errors found.                  
+  Please check output or errors file (                                   
+ E:\GitHub\-\FiniteElementMethod\Demo\Demo.err ) for messages.           
+
+ *** ERROR ***                           CP =      38.875   TIME= 16:23:46
+ Element 1 requires material properties and references material number 1 
+ for which no properties are defined.  Checking terminates.              
+
+ *** ERROR ***                           CP =      39.000   TIME= 16:24:06
+ The step data was checked and there were errors found.                  
+  Please check output or errors file (                                   
+ E:\GitHub\-\FiniteElementMethod\Demo\Demo.err ) for messages.           
+
+ *** ERROR ***                           CP =      39.406   TIME= 16:25:03
+ Element 1 requires material properties and references material number 1 
+ for which no properties are defined.  Checking terminates.              
+
+ *** ERROR ***                           CP =      39.609   TIME= 16:27:38
+ The step data was checked and there were errors found.                  
+  Please check output or errors file (                                   
+ E:\GitHub\-\FiniteElementMethod\Demo\Demo.err ) for messages.           
+
+ *** ERROR ***                           CP =      49.531   TIME= 16:43:45
+ An unexpected error ( SIG$BREAK ) has occurred...  ANSYS internal data  
+ has been corrupted.  ANSYS is unable to recover and will terminate.     
+ Previously saved files are unaffected.  Please send the data leading    
+ to this operation to your technical support provider, as this will      
+ allow ANSYS, Inc to improve the program.                                
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       16:45:19
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       17:09:48
