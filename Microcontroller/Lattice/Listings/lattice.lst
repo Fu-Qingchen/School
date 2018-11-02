@@ -1,0 +1,70 @@
+C51 COMPILER V9.59.0.0   LATTICE                                                           10/31/2018 21:33:39 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE LATTICE
+OBJECT MODULE PLACED IN .\Objects\lattice.obj
+COMPILER INVOKED BY: E:\Keil_v5\C51\BIN\C51.EXE lattice.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\l
+                    -attice.lst) TABS(2) OBJECT(.\Objects\lattice.obj)
+
+line level    source
+
+   1          /**************************************************************************
+   2          * @brief : C51 32×32点阵
+   3          * @author : fuqingchen@whut.edu.cn
+   4          * @data : 2018-10-31
+   5          ***************************************************************************/
+   6          #include <reg51.h>
+   7          #define  R P0 //1为暗
+   8          #define  C P1 //0为暗
+   9          
+  10          void delay(unsigned int i){
+  11   1        unsigned char t;
+  12   1        while(i--){
+  13   2          for(t = 0;t<120;t++);
+  14   2        }
+  15   1      }
+  16          
+  17          /*
+  18          根据要亮点的坐标，反求出R，C的状态
+  19          输入：亮点的坐标，P0,P1的状态
+  20          返回：P0,P1状态
+  21          */
+  22          void findP(int Row,int Column,unsigned char *P0,unsigned char *P1) {
+  23   1        if (Row<16) {  //使用译码器R0
+  24   2          *(P0) = ~(Row);
+  25   2        }else{  //使用译码器R1
+  26   2          *(P0) = ~(Row*16);
+  27   2        }
+  28   1        if(Column<16){ //使用译码器C0
+  29   2          *(P1) = Column;
+  30   2        }else{  //使用译码器C1
+  31   2          *(P1) = Column*16;
+  32   2        }
+  33   1      }
+  34          
+  35          void main() {
+  36   1        while (1) {
+  37   2          int x = 1,y = 1;
+  38   2          unsigned char temR,temC;
+  39   2          findP(x,y,&temR,&temC);
+  40   2          R = ~temR;
+  41   2          C = temC;
+  42   2          delay(100);
+  43   2        }
+  44   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    144    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.59.0.0   LATTICE                                                           10/31/2018 21:33:39 PAGE 2   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

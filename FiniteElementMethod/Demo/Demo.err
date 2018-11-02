@@ -227,3 +227,13 @@
  allow ANSYS, Inc to improve the program.                                
 /COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       16:45:19
 /COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       17:09:48
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       11:32:51
+
+ *** WARNING ***                         CP =      38.422   TIME= 12:10:44
+ This function requires that files currently open be closed.             
+ Executing the function will exit the general postprocessor.             
+
+ *** WARNING ***                         CP =      38.984   TIME= 12:10:59
+ This function requires that files currently open be closed.             
+ Executing the function will exit the general postprocessor.             
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       20:20:14
