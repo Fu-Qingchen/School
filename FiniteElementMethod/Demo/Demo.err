@@ -237,3 +237,11 @@
  This function requires that files currently open be closed.             
  Executing the function will exit the general postprocessor.             
 /COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       20:20:14
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       16:15:31
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       20:39:31
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       21:20:51
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       23:20:33
+
+ *** WARNING ***                         CP =       5.250   TIME= 23:21:28
+ The mesh of area 4 contains PLANE182 triangles, which are much too      
+ stiff in bending.  Use quadratic (6- or 8-node) elements if possible.   

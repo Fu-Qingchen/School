@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/31/2018  21:33:39  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/05/2018  13:43:40  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -12,7 +12,7 @@ MEMORY MODEL: SMALL
 INPUT MODULES INCLUDED:
   .\Objects\STARTUP.obj (?C_STARTUP)
   .\Objects\lattice.obj (LATTICE)
-  E:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  E:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
 
 
 LINK MAP OF MODULE:  .\Objects\Lattice (?C_STARTUP)
@@ -23,34 +23,31 @@ LINK MAP OF MODULE:  .\Objects\Lattice (?C_STARTUP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0010H     UNIT         _DATA_GROUP_
-            IDATA   0018H     0001H     UNIT         ?STACK
+            DATA    0008H     0040H     UNIT         ?DT?LATTICE
+            IDATA   0048H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
-            CODE    0800H     003FH     UNIT         ?PR?_FINDP?LATTICE
-            CODE    083FH     0037H     UNIT         ?PR?MAIN?LATTICE
-            CODE    0876H     001AH     UNIT         ?PR?_DELAY?LATTICE
-            CODE    0890H     0012H     UNIT         ?C?LIB_CODE
-            CODE    08A2H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0044H     UNIT         ?C_INITSEG
+            CODE    08D0H     003AH     UNIT         ?PR?MAIN?LATTICE
+            CODE    090AH     001AH     UNIT         ?PR?_DELAY?LATTICE
 
 
 
 OVERLAY MAP OF MODULE:   .\Objects\Lattice (?C_STARTUP)
 
 
-SEGMENT                          DATA_GROUP 
-  +--> CALLED SEGMENT          START    LENGTH
-----------------------------------------------
-?C_C51STARTUP                  -----    -----
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
   +--> ?PR?MAIN?LATTICE
+  +--> ?C_INITSEG
 
-?PR?MAIN?LATTICE               0008H    0006H
-  +--> ?PR?_FINDP?LATTICE
+?PR?MAIN?LATTICE
   +--> ?PR?_DELAY?LATTICE
-
-?PR?_FINDP?LATTICE             000EH    000AH
 
 
 
@@ -59,12 +56,12 @@ SYMBOL TABLE OF MODULE:  .\Objects\Lattice (?C_STARTUP)
   VALUE           TYPE          NAME
   ----------------------------------
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/31/2018  21:33:39  PAGE 2
-
-
   -------         MODULE        ?C_STARTUP
-  C:08A2H         SEGMENT       ?C_C51STARTUP
-  I:0018H         SEGMENT       ?STACK
+  C:0800H         SEGMENT       ?C_C51STARTUP
+  I:0048H         SEGMENT       ?STACK
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/05/2018  13:43:40  PAGE 2
+
+
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -73,7 +70,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\Lattice (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:08A5H         SYMBOL        IDATALOOP
+  C:0803H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -82,84 +79,69 @@ SYMBOL TABLE OF MODULE:  .\Objects\Lattice (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:08A2H         SYMBOL        STARTUP1
+  C:0800H         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:08A2H         LINE#         133
-  C:08A4H         LINE#         134
-  C:08A5H         LINE#         135
-  C:08A6H         LINE#         136
-  C:08A8H         LINE#         185
-  C:08ABH         LINE#         196
+  C:0800H         LINE#         133
+  C:0802H         LINE#         134
+  C:0803H         LINE#         135
+  C:0804H         LINE#         136
+  C:0806H         LINE#         185
+  C:0809H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        LATTICE
   C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0008H         PUBLIC        dragon
   D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
-  C:0876H         PUBLIC        _delay
-  C:083FH         PUBLIC        main
-  C:0800H         PUBLIC        _findP
+  D:00A0H         PUBLIC        P2
+  C:090AH         PUBLIC        _delay
+  C:08D0H         PUBLIC        main
   -------         PROC          _DELAY
-  D:0006H         SYMBOL        i
+  D:0006H         SYMBOL        t
   -------         DO            
-  D:0005H         SYMBOL        t
+  D:0005H         SYMBOL        i
   -------         ENDDO         
-  C:0876H         LINE#         10
-  C:0876H         LINE#         12
-  C:0880H         LINE#         13
-  C:088FH         LINE#         14
-  C:088FH         LINE#         15
+  C:090AH         LINE#         24
+  C:090AH         LINE#         26
+  C:0914H         LINE#         27
+  C:0914H         LINE#         28
+  C:0923H         LINE#         29
+  C:0923H         LINE#         30
   -------         ENDPROC       _DELAY
-  -------         PROC          _FINDP
-  D:000EH         SYMBOL        Row
-  D:0004H         SYMBOL        Column
-  D:0001H         SYMBOL        P0
-  D:0015H         SYMBOL        P1
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/31/2018  21:33:39  PAGE 3
-
-
-  C:0800H         LINE#         22
-  C:0804H         LINE#         23
-  C:0811H         LINE#         24
-  C:0812H         LINE#         25
-  C:0814H         LINE#         26
-  C:081DH         LINE#         27
-  C:081DH         LINE#         28
-  C:0828H         LINE#         29
-  C:082FH         LINE#         30
-  C:0831H         LINE#         31
-  C:083EH         LINE#         32
-  C:083EH         LINE#         33
-  -------         ENDPROC       _FINDP
   -------         PROC          MAIN
   -------         DO            
-  D:0008H         SYMBOL        x
-  D:000AH         SYMBOL        y
-  D:000CH         SYMBOL        temR
-  D:000DH         SYMBOL        temC
+  D:0004H         SYMBOL        c_No
+  D:0003H         SYMBOL        U2
+  D:0001H         SYMBOL        U3
   -------         ENDDO         
-  C:083FH         LINE#         35
-  C:083FH         LINE#         36
-  C:083FH         LINE#         37
-  C:084BH         LINE#         39
-  C:0865H         LINE#         40
-  C:086AH         LINE#         41
-  C:086DH         LINE#         42
-  C:0874H         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/05/2018  13:43:40  PAGE 3
+
+
+  C:08D0H         LINE#         32
+  C:08D0H         LINE#         33
+  C:08D1H         LINE#         34
+  C:08D3H         LINE#         35
+  C:08D3H         LINE#         36
+  C:08DFH         LINE#         37
+  C:08E3H         LINE#         38
+  C:08E7H         LINE#         39
+  C:08EAH         LINE#         40
+  C:08F2H         LINE#         41
+  C:08FAH         LINE#         42
+  C:0901H         LINE#         43
+  C:0904H         LINE#         44
+  C:0907H         LINE#         45
   -------         ENDPROC       MAIN
   -------         ENDMOD        LATTICE
 
-  -------         MODULE        ?C?CSTPTR
-  C:0890H         PUBLIC        ?C?CSTPTR
-  -------         ENDMOD        ?C?CSTPTR
-
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 009FH BYTE ( 7%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A6H BYTE ( 8%) *
 ******************************************************************************
 
-Program Size: data=25.0 xdata=0 code=177
+Program Size: data=73.0 xdata=0 code=295
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
