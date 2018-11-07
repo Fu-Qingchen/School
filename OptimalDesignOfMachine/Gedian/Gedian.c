@@ -11,7 +11,7 @@
 * @Description: 要找极小点的函数
 *************************************************/
 double function(double x) {
-	return (x * x - x + 1);
+	return (x * x + 15 * x + 1);
 }
 
 /*************************************************
@@ -45,11 +45,14 @@ int findMin(double *A) {
 	return num;
 }
 
-void main() {
-	double a = -80, b = 90, varepsilon = 0.005, result;
-	//a:区间左端点，b:区间右端点，varepsilon：精度，result：结果
+/*************************************************
+* @Description: 格点法求解主要函数
+* @Input: a:区间左端点,b:区间右端点,varepsilon：精度
+* @Return: A[i]
+*************************************************/
+double geDian(double a, double b, double varepsilon) {
 	int num;
-	double A[N],F[N];	//A为等分的点，F为等分点的函数值
+	double A[N], F[N];	//A为等分的点，F为等分点的函数值
 	do
 	{
 		findA(a, b, A);	//得到等分点
@@ -62,13 +65,16 @@ void main() {
 		{
 		case 0:a = a; b = A[num + 1]; break;
 		case N:b = b; a = A[num - 1]; break;
-		default:a = A[num - 1];b = A[num + 1];break;
+		default:a = A[num - 1]; b = A[num + 1]; break;
 		}
 	} while (b - a > 0 ? ((b - a) > varepsilon) : ((a - b) > varepsilon));
-	result = 1.0 / 2 * (a + b);
-	printf("%d\n", num);
-	printf("%f\n", A[num]);
-	printf("%f\n", F[num]);
+	return 1.0 / 2 * (a + b);
+}
+
+void main() {
+	double a = -9, b = 1, varepsilon = 0.005, result;
+	//a:区间左端点，b:区间右端点，varepsilon：精度，result：结果
+	result = geDian(a,b,varepsilon);
 	printf("Result:%f\n", result);
 	system("pause");
 }
