@@ -1,4 +1,4 @@
-C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/14/2018 00:01:09 PAGE 1   
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 00:39:50 PAGE 1   
 
 
 C51 COMPILER V9.59.0.0, COMPILATION OF MODULE KEYBOARD
@@ -16,140 +16,206 @@ line level    source
    6          
    7          #include <reg51.h>
    8          #include <intrins.h>
-   9          #define KEY P0  //分别读取A,B,C,D,1,2,3
-  10          #define LCD P1  //分别控制D0,D1,D2,D3,D4,D5,D6,D7
-  11          sbit RS = P2 ^ 0; //控制RS
-  12          sbit RW = P2 ^ 1; //控制RW
-  13          sbit E  = P2 ^ 2; //控制E
-  14          
-  15          /*************************************************
-  16          * @Description: 延时函数
-  17          * @Input: t:延长的时间
-  18          *************************************************/
-  19          void delay(unsigned int t) {
-  20   1        unsigned char i;
-  21   1        while (t--) {
-  22   2          for (i = 0; i<120; i++);
-  23   2        }
-  24   1      }
-  25          
-  26          /*************************************************
-  27          * @Description: LCD1602读状态(查忙)
-  28          *************************************************/
-  29          void check_busy_LCD() {
-  30   1        unsigned char pin;
-  31   1        do
-  32   1        {
-  33   2          pin = 0xff;
-  34   2          E = 0;
-  35   2          RS = 0; RW = 1; E = 1;  //LCD读状态控制信号
-  36   2          pin = LCD;
-  37   2        } while (pin & 0x80);
-  38   1        E = 0;
-  39   1      }
-  40          
-  41          /*************************************************
-  42          * @Description: LCD1602写命令
-  43          * @Input: com:要写入的命令
-  44          *************************************************/
-  45          void write_command_LCD(unsigned char com) {
-  46   1        check_busy_LCD();
-  47   1        RS = 0; RW = 0; //LCD写命令控制信号
-  48   1        E = 0; LCD = com; E = 1;  //写命令正脉冲
-  49   1        _nop_(); E = 0; delay(1);
-  50   1      }
-  51          
-  52          /*************************************************
-  53          * @Description: LCD1602写数据
-  54          * @Input: date:要写入的数据
-C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/14/2018 00:01:09 PAGE 2   
+   9          #include <string.h>
+  10          #define KEY P0  //分别读取A,B,C,D,1,2,3
+  11          #define LCD P1  //分别控制D0,D1,D2,D3,D4,D5,D6,D7
+  12          sbit RS = P2 ^ 0; //控制RS
+  13          sbit RW = P2 ^ 1; //控制RW
+  14          sbit E  = P2 ^ 2; //控制E
+  15          unsigned char str[16];  //LCD1602第二行输出内容
+  16          
+  17          /*************************************************
+  18          * @Description: 延时函数
+  19          * @Input: t:延长的时间
+  20          *************************************************/
+  21          void delay(unsigned int t) {
+  22   1        unsigned char i;
+  23   1        while (t--) {
+  24   2          for (i = 0; i<120; i++);
+  25   2        }
+  26   1      }
+  27          
+  28          /*************************************************
+  29          * @Description: LCD1602读状态(查忙)
+  30          *************************************************/
+  31          void check_busy_LCD() {
+  32   1        unsigned char pin;
+  33   1        do
+  34   1        {
+  35   2          pin = 0xff;
+  36   2          E = 0;
+  37   2          RS = 0; RW = 1; E = 1;  //LCD读状态控制信号
+  38   2          pin = LCD;
+  39   2        } while (pin & 0x80);
+  40   1        E = 0;
+  41   1      }
+  42          
+  43          /*************************************************
+  44          * @Description: LCD1602写命令
+  45          * @Input: com:要写入的命令
+  46          *************************************************/
+  47          void write_command_LCD(unsigned char com) {
+  48   1        check_busy_LCD();
+  49   1        RS = 0; RW = 0; //LCD写命令控制信号
+  50   1        E = 0; LCD = com; E = 1;  //写命令正脉冲
+  51   1        _nop_(); E = 0; delay(1);
+  52   1      }
+  53          
+  54          /*************************************************
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 00:39:50 PAGE 2   
 
-  55          *************************************************/
-  56          void write_data_LCD(unsigned char date) {
-  57   1        check_busy_LCD();
-  58   1        RS = 1; RW = 0; //LCD写数据控制信号
-  59   1        E = 0; LCD = date; E = 1; //写数据正脉冲
-  60   1        _nop_(); E = 0; delay(1);
-  61   1      }
-  62          
-  63          /*************************************************
-  64          * @Description: LCD1602初始化
-  65          *************************************************/
-  66          void initial_LCD() {
-  67   1        write_command_LCD(0x38);  //两行显示，5*7点阵，8位数据接口
-  68   1        _nop_();
-  69   1        write_command_LCD(0x0C);  //整体显示，光标关，无显示
+  55          * @Description: LCD1602写数据
+  56          * @Input: date:要写入的数据
+  57          *************************************************/
+  58          void write_data_LCD(unsigned char date) {
+  59   1        check_busy_LCD();
+  60   1        RS = 1; RW = 0; //LCD写数据控制信号
+  61   1        E = 0; LCD = date; E = 1; //写数据正脉冲
+  62   1        _nop_(); E = 0; delay(1);
+  63   1      }
+  64          
+  65          /*************************************************
+  66          * @Description: LCD1602初始化
+  67          *************************************************/
+  68          void initial_LCD() {
+  69   1        write_command_LCD(0x38);  //两行显示，5*7点阵，8位数据接口
   70   1        _nop_();
-  71   1        write_command_LCD(0x04);  //整屏不移位
+  71   1        write_command_LCD(0x0C);  //整体显示，光标关，无显示
   72   1        _nop_();
-  73   1        write_command_LCD(0x01);  //显示清屏
-  74   1      }
-  75          
-  76          /*************************************************
-  77          * @Description: LCD1602显示字符串
-  78          * @Input: address:字符串位置;*s:字符串;length:字符串长度
-  79          *************************************************/
-  80          void show_string_LCD(unsigned char address, unsigned char *s, unsigned int length) {
-  81   1        unsigned int i;
-  82   1        write_command_LCD(address);
-  83   1        delay(5);
-  84   1        for (i = 0; i < length; i++)
-  85   1        {
-  86   2          write_data_LCD(*(s + i));
-  87   2        }
-  88   1      }
-  89          
-  90          /*************************************************
-  91          * @Description: 输入 * 时删除一位输入
-  92          *************************************************/
-  93          void get_star() {
-  94   1        ;
-  95   1      }
-  96          
-  97          /*************************************************
-  98          * @Description: 输入 # 时清屏
-  99          *************************************************/
- 100          void get_sign() {
- 101   1        write_command_LCD(0x01);  //显示清屏
- 102   1        delay(50);
- 103   1        show_string_LCD(0x82, "#FU_QINGCHEN", 12);
- 104   1        _nop_();
- 105   1        delay(500);
- 106   1      }
- 107          
- 108          /*************************************************
- 109          * @Description: 输入 数字 时显示号码
- 110          * @Input: i: 输入的号码
- 111          *************************************************/
- 112          void get_num(unsigned int i) {
- 113   1        show_string_LCD(0xC0, "56678", 5);
- 114   1        delay(500);
- 115   1        show_string_LCD(0xC0, "56678", 5);
- 116   1        delay(500);
-C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/14/2018 00:01:09 PAGE 3   
+  73   1        write_command_LCD(0x04);  //整屏不移位
+  74   1        _nop_();
+  75   1        write_command_LCD(0x01);  //显示清屏
+  76   1      }
+  77          
+  78          /*************************************************
+  79          * @Description: LCD1602显示字符串
+  80          * @Input: address:字符串位置;*s:字符串;length:字符串长度
+  81          *************************************************/
+  82          void show_string_LCD(unsigned char address, unsigned char *s, unsigned int length) {
+  83   1        unsigned int i;
+  84   1        write_command_LCD(address);
+  85   1        delay(5);
+  86   1        for (i = 0; i < length; i++)
+  87   1        {
+  88   2          write_data_LCD(*(s + i));
+  89   2        }
+  90   1      }
+  91          
+  92          /*************************************************
+  93          * @Description: 根据输入在LCD上的操作
+  94          * @Input: no:读取的键盘字符[0,1,2,3,4,5,6,7,8,9,*,#]
+  95          *************************************************/
+  96          void get_No(int no) {
+  97   1        char str2;
+  98   1        if (no < 10)  //输入数字时，加一位数字
+  99   1        {
+ 100   2          str2 = no + 48; //将no给str2,48为ASCII码
+ 101   2          if (strlen(str)<16)
+ 102   2          {
+ 103   3            strcat(str, &str2); //加一位数字
+ 104   3          }
+ 105   2        }
+ 106   1        else if (no == 10)  //输入 * 时，去一位数字
+ 107   1        {
+ 108   2          write_command_LCD(0x01);  //显示清屏
+ 109   2          delay(5);
+ 110   2          show_string_LCD(0x82, "#FU_QINGCHEN", 12);
+ 111   2          *(str + strlen(str) - 1) = 0;
+ 112   2          *(str + strlen(str)) = 0;
+ 113   2        }
+ 114   1        else    //输入 # 时，清屏
+ 115   1        {
+ 116   2          *str = 0;
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 00:39:50 PAGE 3   
 
- 117   1      }
-*** WARNING C280 IN LINE 112 OF Keyboard.c: 'i': unreferenced local variable
- 118          
- 119          void main() {
- 120   1        char s[16] = "0";
- 121   1        initial_LCD();
- 122   1        while (1)
- 123   1        {
- 124   2          get_sign();
- 125   2          get_num(5);
- 126   2          write_command_LCD(0x01);  //清屏
- 127   2          delay(5);
- 128   2        }
- 129   1      }
+ 117   2          write_command_LCD(0x01);  //显示清屏
+ 118   2          delay(5);
+ 119   2          show_string_LCD(0x82, "#FU_QINGCHEN", 12);
+ 120   2          _nop_();
+ 121   2          delay(500);
+ 122   2        }
+ 123   1        show_string_LCD(0xC0, str, strlen(str));
+ 124   1        delay(5);
+ 125   1      }
+ 126          
+ 127          /*************************************************
+ 128          * @Description: 输入 # 时清屏
+ 129          *************************************************/
+ 130          void get_sign() {
+ 131   1        //write_command_LCD(0x01);  //显示清屏
+ 132   1        delay(50);
+ 133   1        show_string_LCD(0x82, "#FU_QINGCHEN", 12);
+ 134   1        _nop_();
+ 135   1        delay(100);
+ 136   1      }
+ 137          
+ 138          /*************************************************
+ 139          * @Description: 读取键盘的输入内容
+ 140          *************************************************/
+ 141          void getKeyValue() {
+ 142   1        int i;
+ 143   1        unsigned char R;  //行扫描值
+ 144   1        unsigned char C;  //列扫描值
+ 145   1        unsigned char RC; //坐标
+ 146   1        KEY = 0x0F; //ABCD取高电平，123取低电平
+ 147   1        if (KEY!=0x0F)  //KEY出现变化说明输入
+ 148   1        {
+ 149   2          delay(10);  //去抖动
+ 150   2          if (KEY!=0x0F)
+ 151   2          {
+ 152   3            R = (~KEY) & 0x0F;  //获取行值
+ 153   3            KEY = 0xEF;
+ 154   3            C = 0x10;
+ 155   3            for (i = 0; i < 3; i++)
+ 156   3            {
+ 157   4              if ((KEY|F0)!=0xFE)
+ 158   4              {
+ 159   5                break;
+ 160   5                RC = R | C;
+ 161   5                switch (RC)
+ 162   5                {
+ 163   6                case 0x28:get_No(0); break;
+ 164   6                case 0x11:get_No(1); break;
+ 165   6                case 0x21:get_No(2); break;
+ 166   6                case 0x41:get_No(3); break;
+ 167   6                case 0x12:get_No(4); break;
+ 168   6                case 0x22:get_No(5); break;
+ 169   6                case 0x42:get_No(6); break;
+ 170   6                case 0x14:get_No(7); break;
+ 171   6                case 0x24:get_No(8); break;
+ 172   6                case 0x44:get_No(9); break;
+ 173   6                case 0x18:get_No(10); break;
+ 174   6                case 0x48:get_No(11); break;
+ 175   6                }
+ 176   5              }
+ 177   4              KEY = _crol_(KEY, 1);
+ 178   4              C = _crol_(C, 1);
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 00:39:50 PAGE 4   
+
+ 179   4            }
+ 180   3          }
+ 181   2        }
+ 182   1      }
+ 183          
+ 184          void main() {
+ 185   1        initial_LCD();
+ 186   1        while (1)
+ 187   1        {
+ 188   2          get_sign();
+ 189   2          getKeyValue();
+ 190   2          //write_command_LCD(0x01);  //清屏
+ 191   2          delay(100);
+ 192   2        }
+ 193   1      }
+*** WARNING C294 IN LINE 160 OF Keyboard.c: unreachable code
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    293    ----
-   CONSTANT SIZE    =     35    ----
+   CODE SIZE        =    484    ----
+   CONSTANT SIZE    =     13    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      26
+   DATA SIZE        =     16      16
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
