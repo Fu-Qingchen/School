@@ -4,15 +4,51 @@
 * @Description: 格点法求解迭代步长
 *************************************************/
 #include<stdio.h>
-#include<stdlib.h>
+#include<string.h>
+#define A0 9999
+#define H 9999
 #define N 10 //等分数-1，最多到10000
+#define V 0.00001	//精度
 
 /*************************************************
 * @Description: 要找极小点的函数
 *************************************************/
 double function(double x) {
-	return (x * x + 15 * x + 1);
+	return (x * x + 999 * x + 1);
 }
+
+
+/*************************************************
+* @Description: 进退法主函数
+* @Input: a0:初始值,h:步长,*range:区间左右端点
+* @Return: 区间左右端点
+*************************************************/
+void jintui(double a0, double h, double *range) {
+	if (function(a0) == function(a0 + h))
+	{
+		*(range) = a0;
+		*(range + 1) = a0 + h;
+	}
+	else if (function(a0) > function(a0 + h))
+	{
+		*(range) = a0;
+		do
+		{
+			a0 += h;
+		} while (function(a0)>function(a0 + h));
+		*(range + 1) = a0 + h;
+	}
+	else
+	{
+		*(range + 1) = a0 + h;
+		do
+		{
+			a0 -= h;
+		} while (function(a0)<function(a0 + h));
+		*(range) = a0 - h;
+	}
+}
+
 
 /*************************************************
 * @Description: 平分区间[a,b]为(n+1)等分
@@ -72,9 +108,9 @@ double geDian(double a, double b, double varepsilon) {
 }
 
 void main() {
-	double a = -9, b = 1, varepsilon = 0.005, result;
-	//a:区间左端点，b:区间右端点，varepsilon：精度，result：结果
-	result = geDian(a,b,varepsilon);
+	double a0 = A0, h = H, range[2] = { 0,0 }, varepsilon = V, result;
+	jintui(a0, h, range);
+	result = geDian(range[0],range[1],varepsilon);
 	printf("Result:%f\n", result);
-	system("pause");
+	getchar();
 }

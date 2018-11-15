@@ -146,17 +146,16 @@ void getKeyValue() {
 	KEY = 0x0F;	//ABCD取高电平，123取低电平
 	if (KEY!=0x0F)	//KEY出现变化说明输入
 	{
-		delay(10);	//去抖动
+		delay(15);	//去抖动
 		if (KEY!=0x0F)
 		{
 			R = (~KEY) & 0x0F;	//获取行值
 			KEY = 0xEF;
 			C = 0x10;
-			for (i = 0; i < 3; i++)
+			for (i = 0; i < 4; i++)
 			{
-				if ((KEY|F0)!=0xFE)
+				if ((KEY|0xF0)!=0xFF)
 				{
-					break;
 					RC = R | C;
 					switch (RC)
 					{
@@ -173,6 +172,7 @@ void getKeyValue() {
 					case 0x18:get_No(10); break;
 					case 0x48:get_No(11); break;
 					}
+					break;
 				}
 				KEY = _crol_(KEY, 1);
 				C = _crol_(C, 1);

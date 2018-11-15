@@ -5,7 +5,7 @@
 *************************************************/
 #include<stdio.h>
 #include<stdlib.h>
-#define A 0
+#define A0 0
 #define H 1
 
 /*************************************************
@@ -47,7 +47,7 @@ void jintui(double a0, double h, double *range) {
 }
 
 void main() {
-	double a0 = A, h = H;
+	double a0 = A0, h = H;
 	double range[2] = {0,0};
 	jintui(a0, h, range);
 	printf("Result:%f,%f\n", range[0], range[1]);
