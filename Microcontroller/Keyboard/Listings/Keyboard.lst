@@ -1,4 +1,4 @@
-C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 13:42:28 PAGE 1   
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 23:26:38 PAGE 1   
 
 
 C51 COMPILER V9.59.0.0, COMPILATION OF MODULE KEYBOARD
@@ -62,7 +62,7 @@ line level    source
   52   1      }
   53          
   54          /*************************************************
-C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 13:42:28 PAGE 2   
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 23:26:38 PAGE 2   
 
   55          * @Description: LCD1602写数据
   56          * @Input: date:要写入的数据
@@ -126,7 +126,7 @@ line level    source
  114   1        else    //输入 # 时，清屏
  115   1        {
  116   2          *str = 0;
-C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 13:42:28 PAGE 3   
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 23:26:38 PAGE 3   
 
  117   2          write_command_LCD(0x01);  //显示清屏
  118   2          delay(5);
@@ -157,64 +157,66 @@ line level    source
  143   1        unsigned char R;  //行扫描值
  144   1        unsigned char C;  //列扫描值
  145   1        unsigned char RC; //坐标
- 146   1        KEY = 0x0F; //ABCD取高电平，123取低电平
- 147   1        if (KEY!=0x0F)  //KEY出现变化说明输入
- 148   1        {
- 149   2          delay(15);  //去抖动
- 150   2          if (KEY!=0x0F)
- 151   2          {
- 152   3            R = (~KEY) & 0x0F;  //获取行值
- 153   3            KEY = 0xEF;
- 154   3            C = 0x10;
- 155   3            for (i = 0; i < 4; i++)
- 156   3            {
- 157   4              if ((KEY|0xF0)!=0xFF)
- 158   4              {
- 159   5                RC = R | C;
- 160   5                switch (RC)
- 161   5                {
- 162   6                case 0x28:get_No(0); break;
- 163   6                case 0x11:get_No(1); break;
- 164   6                case 0x21:get_No(2); break;
- 165   6                case 0x41:get_No(3); break;
- 166   6                case 0x12:get_No(4); break;
- 167   6                case 0x22:get_No(5); break;
- 168   6                case 0x42:get_No(6); break;
- 169   6                case 0x14:get_No(7); break;
- 170   6                case 0x24:get_No(8); break;
- 171   6                case 0x44:get_No(9); break;
- 172   6                case 0x18:get_No(10); break;
- 173   6                case 0x48:get_No(11); break;
- 174   6                }
- 175   5                break;
- 176   5              }
- 177   4              KEY = _crol_(KEY, 1);
- 178   4              C = _crol_(C, 1);
-C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 13:42:28 PAGE 4   
+ 146   1        unsigned char code_key;
+ 147   1        KEY = 0x0F; //ABCD取高电平，123取低电平
+ 148   1        if (KEY!=0x0F)  //KEY出现变化说明输入
+ 149   1        {
+ 150   2          delay(15);  //去抖动
+ 151   2          if ((KEY|0xF0)!=0xFF)
+ 152   2          {
+ 153   3            R = (~KEY) & 0x0F;  //获取行值
+ 154   3            code_key = 0xEF;
+ 155   3            C = 0x10;
+ 156   3            for (i = 0; i < 3; i++)
+ 157   3            {
+ 158   4              KEY = code_key;
+ 159   4              if ((KEY|0xF0)!=0xFF)
+ 160   4              {
+ 161   5                RC = R | C;
+ 162   5                switch (RC)
+ 163   5                {
+ 164   6                case 0x28:get_No(0); break;
+ 165   6                case 0x11:get_No(1); break;
+ 166   6                case 0x21:get_No(2); break;
+ 167   6                case 0x41:get_No(3); break;
+ 168   6                case 0x12:get_No(4); break;
+ 169   6                case 0x22:get_No(5); break;
+ 170   6                case 0x42:get_No(6); break;
+ 171   6                case 0x14:get_No(7); break;
+ 172   6                case 0x24:get_No(8); break;
+ 173   6                case 0x44:get_No(9); break;
+ 174   6                case 0x18:get_No(10); break;
+ 175   6                case 0x48:get_No(11); break;
+ 176   6                }
+ 177   5                break;
+ 178   5              }
+C51 COMPILER V9.59.0.0   KEYBOARD                                                          11/15/2018 23:26:38 PAGE 4   
 
- 179   4            }
- 180   3          }
- 181   2        }
- 182   1      }
- 183          
- 184          void main() {
- 185   1        initial_LCD();
- 186   1        while (1)
- 187   1        {
- 188   2          get_sign();
- 189   2          getKeyValue();
- 190   2          //write_command_LCD(0x01);  //清屏
- 191   2          delay(100);
- 192   2        }
- 193   1      }
+ 179   4              code_key = _crol_(code_key, 1);
+ 180   4              C = _crol_(C, 1);
+ 181   4            }
+ 182   3          }
+ 183   2        }
+ 184   1      }
+ 185          
+ 186          void main() {
+ 187   1        initial_LCD();
+ 188   1        while (1)
+ 189   1        {
+ 190   2          get_sign();
+ 191   2          getKeyValue();
+ 192   2          //write_command_LCD(0x01);  //清屏
+ 193   2          delay(100);
+ 194   2        }
+ 195   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    605    ----
+   CODE SIZE        =    608    ----
    CONSTANT SIZE    =     13    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     16      15
+   DATA SIZE        =     16      16
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

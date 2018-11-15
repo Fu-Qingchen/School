@@ -5,7 +5,7 @@
 *************************************************/
 #include<stdio.h>
 #include<string.h>
-#define A0 9999
+#define A0 -9999	
 #define H 9999
 #define N 10 //等分数-1，最多到10000
 #define V 0.00001	//精度
@@ -14,7 +14,7 @@
 * @Description: 要找极小点的函数
 *************************************************/
 double function(double x) {
-	return (x * x + 999 * x + 1);
+	return (x * x + 2 * x + 1);
 }
 
 

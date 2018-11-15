@@ -143,17 +143,19 @@ void getKeyValue() {
 	unsigned char R;	//行扫描值
 	unsigned char C;	//列扫描值
 	unsigned char RC;	//坐标
+	unsigned char code_key;
 	KEY = 0x0F;	//ABCD取高电平，123取低电平
 	if (KEY!=0x0F)	//KEY出现变化说明输入
 	{
 		delay(15);	//去抖动
-		if (KEY!=0x0F)
+		if ((KEY|0xF0)!=0xFF)
 		{
 			R = (~KEY) & 0x0F;	//获取行值
-			KEY = 0xEF;
+			code_key = 0xEF;
 			C = 0x10;
-			for (i = 0; i < 4; i++)
+			for (i = 0; i < 3; i++)
 			{
+				KEY = code_key;
 				if ((KEY|0xF0)!=0xFF)
 				{
 					RC = R | C;
@@ -174,7 +176,7 @@ void getKeyValue() {
 					}
 					break;
 				}
-				KEY = _crol_(KEY, 1);
+				code_key = _crol_(code_key, 1);
 				C = _crol_(C, 1);
 			}
 		}
