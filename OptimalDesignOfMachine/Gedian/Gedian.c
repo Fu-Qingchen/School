@@ -5,7 +5,7 @@
 *************************************************/
 #include<stdio.h>
 #include<stdlib.h>
-#define A0 -9999	
+#define A0 999
 #define H 10	//格点法步长
 #define N 10 //格点法等分数
 #define V 0.00001	//精度

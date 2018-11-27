@@ -5,8 +5,8 @@
 *************************************************/
 #include<stdio.h>
 #include<stdlib.h>
-#define A0 0
-#define H 1
+#define A0 -12340
+#define H 1069
 
 /*************************************************
 * @Description: 要找区间的函数
@@ -50,6 +50,6 @@ void main() {
 	double a0 = A0, h = H;
 	double range[2] = {0,0};
 	jintui(a0, h, range);
-	printf("Result:%f,%f\n", range[0], range[1]);
+	printf("Result:%lf,%lf\n", range[0], range[1]);
 	system("pause");
 }
