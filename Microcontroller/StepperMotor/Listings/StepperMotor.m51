@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/26/2018  23:39:58  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/28/2018  19:25:04  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -35,9 +35,9 @@ LINK MAP OF MODULE:  .\Objects\StepperMotor (?C_STARTUP)
             CODE    0800H     008CH     UNIT         ?C_C51STARTUP
             CODE    088CH     003FH     UNIT         ?PR?NEGITIVE?STEPPERMOTOR
             CODE    08CBH     003DH     UNIT         ?PR?POSITIVE?STEPPERMOTOR
-            CODE    0908H     0026H     UNIT         ?PR?_DELAY?STEPPERMOTOR
-            CODE    092EH     0012H     UNIT         ?PR?MAIN?STEPPERMOTOR
-            CODE    0940H     000FH     UNIT         ?C_INITSEG
+            CODE    0908H     0029H     UNIT         ?PR?_DELAY?STEPPERMOTOR
+            CODE    0931H     0012H     UNIT         ?PR?MAIN?STEPPERMOTOR
+            CODE    0943H     000FH     UNIT         ?C_INITSEG
 
 
 
@@ -59,7 +59,7 @@ SEGMENT
 ?PR?POSITIVE?STEPPERMOTOR
   +--> ?PR?_DELAY?STEPPERMOTOR
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/26/2018  23:39:58  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/28/2018  19:25:04  PAGE 2
 
 
 *** NEW ROOT ***************************************************
@@ -112,34 +112,34 @@ SYMBOL TABLE OF MODULE:  .\Objects\StepperMotor (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
   B:00A8H.7       PUBLIC        EA
-  C:0914H         PUBLIC        _delay
+  C:0917H         PUBLIC        _delay
   D:00B8H         PUBLIC        IP
-  C:092EH         PUBLIC        main
+  C:0931H         PUBLIC        main
   D:0008H         PUBLIC        turn
   B:00A8H.0       PUBLIC        EX0
   B:0088H.0       PUBLIC        IT0
   B:00A8H.2       PUBLIC        EX1
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/26/2018  23:39:58  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/28/2018  19:25:04  PAGE 3
 
 
   B:0088H.2       PUBLIC        IT1
   C:088CH         PUBLIC        negitive
   D:0010H         PUBLIC        i
   C:08CBH         PUBLIC        positive
-  C:0910H         SYMBOL        L?0018
+  C:0913H         SYMBOL        L?0018
   -------         PROC          L?0017
   -------         ENDPROC       L?0017
-  C:0910H         SYMBOL        L?0018
+  C:0913H         SYMBOL        L?0018
   -------         PROC          _DELAY
   D:0006H         SYMBOL        t
   -------         DO            
   D:0005H         SYMBOL        i
   -------         ENDDO         
-  C:0914H         LINE#         15
-  C:0914H         LINE#         17
-  C:091EH         LINE#         18
-  C:092DH         LINE#         19
-  C:092DH         LINE#         20
+  C:0917H         LINE#         15
+  C:0917H         LINE#         17
+  C:0921H         LINE#         18
+  C:0930H         LINE#         19
+  C:0930H         LINE#         20
   -------         ENDPROC       _DELAY
   -------         PROC          POSITIVE
   C:08CBH         LINE#         25
@@ -150,39 +150,41 @@ SYMBOL TABLE OF MODULE:  .\Objects\StepperMotor (?C_STARTUP)
   C:08F3H         LINE#         31
   C:08F3H         LINE#         32
   C:08F3H         LINE#         33
-  C:08F6H         LINE#         34
-  C:08F9H         LINE#         35
+  C:08F3H         LINE#         34
+  C:08F6H         LINE#         35
+  C:08F9H         LINE#         36
   -------         ENDPROC       POSITIVE
   -------         PROC          NEGITIVE
-  C:088CH         LINE#         40
-  C:089DH         LINE#         42
-  C:08A5H         LINE#         43
-  C:08B0H         LINE#         44
+  C:088CH         LINE#         41
+  C:089DH         LINE#         43
+  C:08A5H         LINE#         44
   C:08B0H         LINE#         45
-  C:08B6H         LINE#         46
+  C:08B0H         LINE#         46
   C:08B6H         LINE#         47
   C:08B6H         LINE#         48
-  C:08B9H         LINE#         49
-  C:08BCH         LINE#         50
+  C:08B6H         LINE#         49
+  C:08B6H         LINE#         50
+  C:08B9H         LINE#         51
+  C:08BCH         LINE#         52
   -------         ENDPROC       NEGITIVE
   -------         PROC          MAIN
-  C:092EH         LINE#         52
-  C:092EH         LINE#         53
-  C:0930H         LINE#         54
-  C:0934H         LINE#         55
-  C:0938H         LINE#         56
-  C:093BH         LINE#         57
+  C:0931H         LINE#         54
+  C:0931H         LINE#         55
+  C:0933H         LINE#         56
+  C:0937H         LINE#         57
   C:093BH         LINE#         58
   C:093EH         LINE#         59
+  C:093EH         LINE#         60
+  C:0941H         LINE#         61
   -------         ENDPROC       MAIN
   -------         ENDMOD        STEPPERMOTOR
 
-******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D7H BYTE (10%) *
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/26/2018  23:39:58  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/28/2018  19:25:04  PAGE 4
 
 
 ******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00DAH BYTE (10%) *
+******************************************************************************
 
-Program Size: data=19.0 xdata=0 code=344
+Program Size: data=19.0 xdata=0 code=347
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

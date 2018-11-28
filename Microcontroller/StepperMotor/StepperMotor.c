@@ -29,6 +29,7 @@ void positive() interrupt 0 {
 	{
 		i = 0;
 	}
+	P0 = 0xff;
 	P0 = turn[i];
 	delay(100);
 	P0 = 0xff;
@@ -44,6 +45,7 @@ void negitive()  interrupt 2 {
 	{
 		i = 7;
 	}
+	P0 = 0xff;
 	P0 = turn[i];
 	delay(100);
 	P0 = 0xff;
