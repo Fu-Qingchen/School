@@ -1,190 +1,50 @@
-/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       20:54:02
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       23:47:07
 
- *** WARNING ***                         CP =       2.266   TIME= 20:54:13
- The /BATCH command must be the first line of input.  The /BATCH command 
- is ignored.                                                             
-
- *** WARNING ***                         CP =       4.406   TIME= 20:55:13
- The /BATCH command must be the first line of input.  The /BATCH command 
- is ignored.                                                             
-/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       21:15:50
-
- *** WARNING ***                         CP =       3.047   TIME= 21:50:43
- The /BATCH command must be the first line of input.  The /BATCH command 
- is ignored.                                                             
-
- *** ERROR ***                           CP =       7.328   TIME= 21:51:41
- Data file APDLDemo.db does not exist for RESUME.                        
-
- *** WARNING ***                         CP =       7.656   TIME= 21:51:46
- The /BATCH command must be the first line of input.  The /BATCH command 
- is ignored.                                                             
-
- *** WARNING ***                         CP =       7.828   TIME= 21:51:46
- Coupled set 1 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       7.844   TIME= 21:51:46
- Coupled set 1 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       7.875   TIME= 21:51:47
- Coupled set 2 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       7.891   TIME= 21:51:47
- Coupled set 2 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       7.938   TIME= 21:51:47
- Coupled set 3 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       7.969   TIME= 21:51:47
- Coupled set 3 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       8.031   TIME= 21:51:47
- Coupled set 4 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       8.094   TIME= 21:51:47
- Coupled set 4 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       8.141   TIME= 21:51:47
- Coupled set 5 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       8.172   TIME= 21:51:47
- Coupled set 5 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       8.312   TIME= 21:51:48
- Element order list length 5 does not match number of selected elements  
- 10                                                                      
-  New order vector being created.                                        
-
- *** WARNING ***                         CP =      17.438   TIME= 22:14:48
+ *** WARNING ***                         CP =      18.969   TIME= 00:36:00
  /BATCH is not a recognized POST1 command, abbreviation, or macro.       
   This command will be ignored.                                          
 
- *** WARNING ***                         CP =      17.891   TIME= 22:14:49
+ *** WARNING ***                         CP =      19.266   TIME= 00:36:01
  Coupled set 1 already contains node 2.  Node 2 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      17.953   TIME= 22:14:49
+ *** WARNING ***                         CP =      19.344   TIME= 00:36:01
  Coupled set 1 already contains node 3.  Node 3 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.000   TIME= 22:14:49
+ *** WARNING ***                         CP =      19.391   TIME= 00:36:01
  Coupled set 2 already contains node 2.  Node 2 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.047   TIME= 22:14:49
+ *** WARNING ***                         CP =      19.438   TIME= 00:36:01
  Coupled set 2 already contains node 3.  Node 3 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.109   TIME= 22:14:49
+ *** WARNING ***                         CP =      19.453   TIME= 00:36:01
  Coupled set 3 already contains node 2.  Node 2 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.156   TIME= 22:14:50
+ *** WARNING ***                         CP =      19.484   TIME= 00:36:01
  Coupled set 3 already contains node 3.  Node 3 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.219   TIME= 22:14:50
+ *** WARNING ***                         CP =      19.547   TIME= 00:36:02
  Coupled set 4 already contains node 2.  Node 2 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.250   TIME= 22:14:50
+ *** WARNING ***                         CP =      19.594   TIME= 00:36:02
  Coupled set 4 already contains node 3.  Node 3 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.312   TIME= 22:14:50
+ *** WARNING ***                         CP =      19.641   TIME= 00:36:02
  Coupled set 5 already contains node 2.  Node 2 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.344   TIME= 22:14:50
+ *** WARNING ***                         CP =      19.688   TIME= 00:36:02
  Coupled set 5 already contains node 3.  Node 3 will not be added to the 
  set.                                                                    
 
- *** WARNING ***                         CP =      18.469   TIME= 22:14:50
- Element order list length 10 does not match number of selected elements 
- 15                                                                      
-  New order vector being created.                                        
-/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       22:15:17
-
- *** WARNING ***                         CP =       2.781   TIME= 22:15:33
- The /BATCH command must be the first line of input.  The /BATCH command 
- is ignored.                                                             
-
- *** WARNING ***                         CP =       3.922   TIME= 22:15:48
- The /BATCH command must be the first line of input.  The /BATCH command 
- is ignored.                                                             
-
- *** WARNING ***                         CP =       4.172   TIME= 22:15:49
- Coupled set 1 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.188   TIME= 22:15:49
- Coupled set 1 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.234   TIME= 22:15:49
- Coupled set 2 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.281   TIME= 22:15:49
- Coupled set 2 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.312   TIME= 22:15:49
- Coupled set 3 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.344   TIME= 22:15:49
- Coupled set 3 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.375   TIME= 22:15:50
- Coupled set 4 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.406   TIME= 22:15:50
- Coupled set 4 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.453   TIME= 22:15:50
- Coupled set 5 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.500   TIME= 22:15:50
- Coupled set 5 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =       4.641   TIME= 22:15:50
+ *** WARNING ***                         CP =      19.781   TIME= 00:36:02
  Element order list length 5 does not match number of selected elements  
  10                                                                      
   New order vector being created.                                        
-
- *** WARNING ***                         CP =      15.109   TIME= 22:39:36
- No element table items are available.  The PLETAB command is ignored.   
-
- *** WARNING ***                         CP =      15.250   TIME= 22:39:42
- No element table items are available.  The PLETAB command is ignored.   
-
- *** WARNING ***                         CP =      15.359   TIME= 22:39:43
- No element table items are available.  The PLETAB command is ignored.   
-
- *** WARNING ***                         CP =      21.422   TIME= 22:41:16
- No element table items are available.  The PRETAB command is ignored.   
-
- *** WARNING ***                         CP =      30.469   TIME= 22:53:08
- No element table items are available.  The PLLS command is ignored.     
-
- *** WARNING ***                         CP =      45.312   TIME= 23:21:57
- The requested NL data is not available.  The PLNSOL command is ignored. 
-
- *** WARNING ***                         CP =      50.828   TIME= 23:22:38
- The requested NL data is not available.  The PLESOL command is ignored. 

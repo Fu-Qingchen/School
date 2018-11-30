@@ -20,10 +20,10 @@
      number of negative pivots encountered   =               0
      factorization panel size                =             128
      number of cores used                    =               2
-     time (cpu & wall) for structure input   =        0.000000        0.000070
-     time (cpu & wall) for ordering          =        0.000058        0.000058
-     time (cpu & wall) for other matrix prep =       -0.000058        0.000220
-     time (cpu & wall) for value input       =        0.000000        0.000059
+     time (cpu & wall) for structure input   =        0.000000        0.000052
+     time (cpu & wall) for ordering          =        0.000060        0.000060
+     time (cpu & wall) for other matrix prep =       -0.000060        0.000228
+     time (cpu & wall) for value input       =        0.000000        0.000058
      time (cpu & wall) for matrix distrib.   =        0.000000        0.000101
 
      i/o stats: unit-Core          file length             amount transferred
@@ -61,11 +61,11 @@
      number of negative pivots encountered   =               0
      factorization panel size                =             128
      number of cores used                    =               2
-     time (cpu & wall) for structure input   =        0.000000        0.000068
-     time (cpu & wall) for ordering          =        0.000069        0.000069
-     time (cpu & wall) for other matrix prep =       -0.000069        0.000308
-     time (cpu & wall) for value input       =        0.000000        0.000074
-     time (cpu & wall) for matrix distrib.   =        0.000000        0.000130
+     time (cpu & wall) for structure input   =        0.000000        0.000063
+     time (cpu & wall) for ordering          =        0.000000        0.000000
+     time (cpu & wall) for other matrix prep =        0.000000        0.000476
+     time (cpu & wall) for value input       =        0.000000        0.000069
+     time (cpu & wall) for matrix distrib.   =        0.000000        0.000148
 
      i/o stats: unit-Core          file length             amount transferred
                                  words       mbytes          words       mbytes
