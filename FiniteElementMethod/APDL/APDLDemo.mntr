@@ -2,10 +2,10 @@
 
 
  SOLUTION HISTORY INFORMATION FOR JOB: APDLDemo.mntr                                                                                                                                                                                                                                                       
- ANSYS RELEASE 19.0                     00:36:02    12/01/2018
+ ANSYS RELEASE 19.0                     22:35:04    12/02/2018
 
   LOAD   SUB-  NO.  NO.    TOTL  INCREMENT    TOTAL         VARIAB 1     VARIAB 2     VARIAB 3
   STEP   STEP ATTMP ITER   ITER  TIME/LFACT   TIME/LFACT    MONITOR      MONITOR      MONITOR
                                                              Wall         MxDs         MxPl
 
-     1      1    1     1      1     1.0000       1.0000      0.85175E-01  -6.5628      0.78886E-30
+     1      1    1     1      1     1.0000       1.0000      0.84923E-01  -8.8582      0.78886E-30

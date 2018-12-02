@@ -1,50 +1,5 @@
-/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       23:47:07
+/COM,ANSYS RELEASE Release 19.0      BUILD 19.0      UP20171214       22:32:16
 
- *** WARNING ***                         CP =      18.969   TIME= 00:36:00
- /BATCH is not a recognized POST1 command, abbreviation, or macro.       
-  This command will be ignored.                                          
-
- *** WARNING ***                         CP =      19.266   TIME= 00:36:01
- Coupled set 1 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.344   TIME= 00:36:01
- Coupled set 1 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.391   TIME= 00:36:01
- Coupled set 2 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.438   TIME= 00:36:01
- Coupled set 2 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.453   TIME= 00:36:01
- Coupled set 3 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.484   TIME= 00:36:01
- Coupled set 3 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.547   TIME= 00:36:02
- Coupled set 4 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.594   TIME= 00:36:02
- Coupled set 4 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.641   TIME= 00:36:02
- Coupled set 5 already contains node 2.  Node 2 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.688   TIME= 00:36:02
- Coupled set 5 already contains node 3.  Node 3 will not be added to the 
- set.                                                                    
-
- *** WARNING ***                         CP =      19.781   TIME= 00:36:02
- Element order list length 5 does not match number of selected elements  
- 10                                                                      
-  New order vector being created.                                        
+ *** WARNING ***                         CP =       2.703   TIME= 22:35:04
+ The /BATCH command must be the first line of input.  The /BATCH command 
+ is ignored.                                                             
