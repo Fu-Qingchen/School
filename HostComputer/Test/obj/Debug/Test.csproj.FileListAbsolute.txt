@@ -1,0 +1,14 @@
+E:\GitHub\-\HostComputer\Test\bin\Debug\Test.exe
+E:\GitHub\-\HostComputer\Test\bin\Debug\Test.pdb
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+E:\GitHub\-\HostComputer\Test\obj\Debug\MainWindow.g.cs
+E:\GitHub\-\HostComputer\Test\obj\Debug\App.g.cs
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test_MarkupCompile.cache
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test_MarkupCompile.lref
+E:\GitHub\-\HostComputer\Test\obj\Debug\MainWindow.baml
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test.g.resources
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test.Properties.Resources.resources
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test.csproj.GenerateResource.cache
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test.exe
+E:\GitHub\-\HostComputer\Test\obj\Debug\Test.pdb

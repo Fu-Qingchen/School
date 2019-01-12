@@ -1,0 +1,6 @@
+E:\GitHub\-\HostComputer\LearnCsharp\bin\Debug\LearnCsharp.exe
+E:\GitHub\-\HostComputer\LearnCsharp\bin\Debug\LearnCsharp.pdb
+E:\GitHub\-\HostComputer\LearnCsharp\obj\Debug\LearnCsharp.csprojResolveAssemblyReference.cache
+E:\GitHub\-\HostComputer\LearnCsharp\obj\Debug\LearnCsharp.csproj.CoreCompileInputs.cache
+E:\GitHub\-\HostComputer\LearnCsharp\obj\Debug\LearnCsharp.exe
+E:\GitHub\-\HostComputer\LearnCsharp\obj\Debug\LearnCsharp.pdb
