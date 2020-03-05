@@ -1,4 +1,0 @@
-".\Objects\STARTUP.obj",
-".\Objects\lattice.obj" 
-TO ".\Objects\Lattice" 
-PRINT(".\Listings\Lattice.m51")

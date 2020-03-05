@@ -1,4 +1,0 @@
-".\Objects\STARTUP.obj",
-".\Objects\Keyboard.obj" 
-TO ".\Objects\keyboard" 
-PRINT(".\Listings\keyboard.m51")
